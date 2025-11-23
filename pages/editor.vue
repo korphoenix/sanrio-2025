@@ -1,29 +1,27 @@
 <template>
-  <article class="p-6">
-    <h1 class="text-xl font-bold mb-4">修改設定</h1>
+  <article class="p-6 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg p-6 w-full max-w-[400px]">
+      <h1 class="text-[36px] font-bold mb-4 text-center">設定排隊序列</h1>
+      <h2 class="text-[24px] mb-4">當前數值: {{ currentValue }}</h2>
+      <div v-if="loading">處理中...</div>
+      <div v-else>
+        <label class="block mb-3">
+          <input
+            v-model="value"
+            type="text"
+            placeholder="請輸入排隊序列"
+            class="border px-3 py-2 rounded w-full"
+          />
+        </label>
 
-    <h2>Current Value: {{ currentValue }}</h2>
-
-    <div v-if="loading">處理中...</div>
-
-    <div v-else>
-      <label class="block mb-3">
-        <span class="block mb-1">Queue Text：</span>
-        <input
-          v-model="value"
-          type="text"
-          class="border px-3 py-2 rounded w-full"
-        />
-      </label>
-
-      <button
-        class="px-4 py-2 rounded bg-black text-white"
-        @click="updateValue"
-      >
-        儲存
-      </button>
-
-      <p v-if="message" class="mt-3">{{ message }}</p>
+        <button
+          class="px-4 py-2 rounded bg-black text-white"
+          @click="updateValue"
+        >
+          儲存
+        </button>
+        <p v-if="message" class="mt-3">{{ message }}</p>
+      </div>
     </div>
   </article>
 </template>
@@ -79,3 +77,7 @@ const updateValue = async () => {
   loading.value = false
 }
 </script>
+
+<style scoped lang="scss">
+
+</style>

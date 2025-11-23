@@ -10,4 +10,18 @@ export default defineNuxtConfig({
     },
   },
 
+  modules: [
+    '@nuxtjs/tailwindcss',
+  ],
+
+
+  tailwindcss: {
+    cssPath: '~/assets/scss/main.scss',
+    configPath: 'tailwind.config',
+    exposeConfig: false,
+    // exposeLevel: 2,
+    config: {},
+    // injectPosition: 'first',
+    viewer: false,
+  },
 })
