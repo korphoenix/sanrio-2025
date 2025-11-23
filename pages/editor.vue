@@ -4,7 +4,7 @@
       <h1 class="text-[36px] font-bold mb-4 text-center">設定排隊序列</h1>
       <h2 class="text-[24px] mb-4">當前數值: {{ currentValue }}</h2>
       <div v-if="loading">處理中...</div>
-      <div v-else>
+      <div class="text-center" v-else>
         <label class="block mb-3">
           <input
             v-model="value"
@@ -13,7 +13,6 @@
             class="border px-3 py-2 rounded w-full"
           />
         </label>
-
         <button
           class="px-4 py-2 rounded bg-black text-white"
           @click="updateValue"
@@ -64,14 +63,14 @@ const updateValue = async () => {
 
   const { error } = await $supabase
     .from('sanrio')
-    .update({ queue_text: value.value })
+    .update({ queue_text: value.value || '0' })
     .eq('id', 1)
 
   if (error) {
     message.value = '更新失敗：' + error.message
   } else {
     message.value = '更新成功！'
-    currentValue.value = value.value
+    currentValue.value = value.value || '0'
   }
 
   loading.value = false
