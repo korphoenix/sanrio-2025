@@ -3,6 +3,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  app: {
+    head: {
+      title: 'Hello Sanrio！三麗鷗明星派對',
+      meta: [
+        { name: 'description', content: 'Hello Sanrio！三麗鷗明星派對' },
+      ],
+    },
+  },
+
   runtimeConfig: {
     public: {
       supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL,
