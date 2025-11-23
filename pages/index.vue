@@ -57,7 +57,6 @@ const fetchValue = async () => {
 }
 
 onMounted(async () => {
-  await fetchValue();
   let tl = gsap.timeline({ delay: .2, onComplete: () => {
     gsap.to('.diamond', {
       rotation: 15,
@@ -217,7 +216,9 @@ onMounted(async () => {
     '.6'
   )
 
+  await fetchValue();
 })
+
 
 </script>
 
