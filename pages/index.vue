@@ -12,7 +12,7 @@
     </div>
     <div class="relative w-[74%] mx-auto mt-10">
 
-      <img class="content-image w-full" src="/content.png" alt="">
+      <img class="content-image w-full" src="/content-v2.png" alt="">
       <h2 class="absolute top-0 left-1/2 -translate-x-1/2 text-nowrap top-[3%]">{{ value }}</h2>
       <img class="content-blue-star absolute left-[-15%] top-[20%] w-[7%]" src="/blue-star@2x.png">
       <img class="content-leaf absolute left-[-5%] top-[-5%] w-[20%]" src="/leaf@2x.png" alt="">
